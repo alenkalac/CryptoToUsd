@@ -8,10 +8,6 @@ public class VarCache {
 
     private static HashMap<String, CryptoModel> cryptoHashMap = new HashMap<>();
 
-    public static HashMap<String, CryptoModel> getCryptoHashMap() {
-        return cryptoHashMap;
-    }
-
     public static void put(String key, CryptoModel value) {
         cryptoHashMap.put(key, value);
     }

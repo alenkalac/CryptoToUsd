@@ -6,6 +6,27 @@
             - btc
             - ltc
             - eth
+
+# Response
+    - Assuming you're using margin.type flat with a margin.value of 200
+
+    {
+        "price": 10000,
+        "margin": {
+            "buy": 10200, 
+            "sell": 9800 
+        }
+    }
+    
+    - Assuming you're using margin.type percentage with a margin.value of 10
+    
+    {
+        "price": 10000,
+        "margin": {
+            "buy": 11000,
+            "sell": 9000
+        }    
+    }
             
 # Application Property Values
     xxx.margin.type

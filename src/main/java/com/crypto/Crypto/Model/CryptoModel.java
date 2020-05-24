@@ -3,9 +3,9 @@ package com.crypto.Crypto.Model;
 public class CryptoModel {
     private double priceInUsd;
 
-    private Margin margin;
+    private MarginModel margin;
 
-    public CryptoModel(double priceInUsd, Margin margin){
+    public CryptoModel(double priceInUsd, MarginModel margin){
         this.priceInUsd = priceInUsd;
         this.margin = margin;
     }
@@ -18,11 +18,11 @@ public class CryptoModel {
         this.priceInUsd = priceInUsd;
     }
 
-    public Margin getMargin() {
+    public MarginModel getMargin() {
         return margin;
     }
 
-    public void setMargin(Margin margin) {
+    public void setMargin(MarginModel margin) {
         this.margin = margin;
     }
 }

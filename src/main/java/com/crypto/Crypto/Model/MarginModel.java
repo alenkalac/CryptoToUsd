@@ -1,6 +1,6 @@
 package com.crypto.Crypto.Model;
 
-public class Margin
+public class MarginModel
 {
     public double buy;
 
@@ -14,7 +14,7 @@ public class Margin
         return sell;
     }
 
-    public Margin(double buy, double sell){
+    public MarginModel(double buy, double sell){
         this.buy = buy;
         this.sell = sell;
     }

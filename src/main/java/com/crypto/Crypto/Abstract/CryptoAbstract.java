@@ -23,9 +23,6 @@ public abstract class CryptoAbstract {
 
             return cacheCryptoModel;
         } catch (WebClientResponseException e) {
-
-            System.out.println("Getting value from cache.");
-
             CryptoModel cryptoModel = VarCache.getByKey(this.getKey());
 
             return cryptoModel == null ? new CryptoModel(0, null) : cryptoModel;

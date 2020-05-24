@@ -5,8 +5,24 @@ public class CryptoModel {
 
     private MarginModel margin;
 
-    public CryptoModel(double price, MarginModel margin) {
+    public CryptoModel(double price, MarginModel margin){
         this.price = price;
+        this.margin = margin;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double priceInUsd) {
+        this.price = priceInUsd;
+    }
+
+    public MarginModel getMargin() {
+        return margin;
+    }
+
+    public void setMargin(MarginModel margin) {
         this.margin = margin;
     }
 }

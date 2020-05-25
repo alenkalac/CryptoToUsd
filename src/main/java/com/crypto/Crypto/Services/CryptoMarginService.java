@@ -30,8 +30,8 @@ public class CryptoMarginService {
 
                 return new MarginModel(buyAt, sellAt);
             case "percentage":
-                buyAt = Double.parseDouble(decimalFormat.format(usdValue + (usdValue / marginValue)));
-                sellAt = Double.parseDouble(decimalFormat.format(usdValue - (usdValue / marginValue)));
+                buyAt = Double.parseDouble(decimalFormat.format(usdValue + ((usdValue / 100) * marginValue)));
+                sellAt = Double.parseDouble(decimalFormat.format(usdValue - ((usdValue / 100) * marginValue)));
 
                 return new MarginModel(buyAt, sellAt);
             default:

@@ -1,7 +1,7 @@
 package com.crypto.Crypto.Currency;
 
 import com.crypto.Crypto.Enum.BinanceTickerCurrencyTypes;
-import com.crypto.Crypto.Abstract.CryptoAbstract;
+import com.crypto.Crypto.Abstract.CryptoCurrency;
 import com.crypto.Crypto.Model.BinanceJsonResponseModel;
 import com.crypto.Crypto.Model.EndPoints;
 import com.crypto.Crypto.Services.CryptoMarginService;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
-public class Bitcoin extends CryptoAbstract {
+public class Bitcoin extends CryptoCurrency {
 
     private WebClient.Builder webClientBuilder = WebClient.builder();
 

@@ -1,7 +1,7 @@
-package com.crypto.Crypto.Api;
+package com.crypto.Crypto.Controller;
 
+import com.crypto.Crypto.Cache.PriceCache;
 import com.crypto.Crypto.Factory.CryptoCurrencyFactory;
-import com.crypto.Crypto.Abstract.CryptoAbstract;
 import com.crypto.Crypto.Model.CryptoModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,14 +20,6 @@ public class UsdConvertController {
 
     @GetMapping(path = "/{currency}/usd")
     public ResponseEntity<CryptoModel> ToUsd(@PathVariable(value = "currency") String currency) {
-        try {
-            CryptoAbstract currentCrypto = cryptoCurrencyFactory.getCrypto(currency);
-
-            return ResponseEntity.status(HttpStatus.OK).body(currentCrypto.getCryptoInfo());
-        } catch (Exception e) {
-            e.printStackTrace();
-
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
+        return ResponseEntity.status(HttpStatus.OK).body(PriceCache.getByKey(currency));
     }
 }

@@ -4,7 +4,7 @@ import com.crypto.Crypto.Model.CryptoModel;
 
 import java.util.HashMap;
 
-public class VarCache {
+public class PriceCache {
 
     private static HashMap<String, CryptoModel> cryptoHashMap = new HashMap<>();
 

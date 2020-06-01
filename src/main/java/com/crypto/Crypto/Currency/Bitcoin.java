@@ -18,7 +18,7 @@ public class Bitcoin extends CryptoCurrency {
     private String marginType;
 
     @Value("${btc.margin.value}")
-    private Integer marginValue;
+    private double marginValue;
 
     public String getKey() {
         return "btc";

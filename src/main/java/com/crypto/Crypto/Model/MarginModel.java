@@ -1,20 +1,18 @@
 package com.crypto.Crypto.Model;
 
-public class MarginModel
-{
-    public double buy;
+public class MarginModel {
+    private String buy;
+    private String sell;
 
-    public double sell;
-
-    public double getBuy() {
+    public String getBuy() {
         return buy;
     }
 
-    public double getSell() {
+    public String getSell() {
         return sell;
     }
 
-    public MarginModel(double buy, double sell){
+    public MarginModel(String buy, String sell){
         this.buy = buy;
         this.sell = sell;
     }

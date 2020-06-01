@@ -6,12 +6,10 @@ import java.text.DecimalFormat;
 
 public class CryptoMarginService {
     private String marginType;
-
-    private Integer marginValue;
-
+    private double marginValue;
     private double usdValue;
 
-    public CryptoMarginService(String marginType, Integer marginValue, double usdValue) {
+    public CryptoMarginService(String marginType, double marginValue, double usdValue) {
         this.marginType = marginType;
         this.marginValue = marginValue;
         this.usdValue = usdValue;
@@ -20,18 +18,18 @@ public class CryptoMarginService {
     public MarginModel getMargin() throws Exception {
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-        double buyAt;
-        double sellAt;
+        String buyAt;
+        String sellAt;
 
         switch (marginType.toLowerCase()) {
             case "flat":
-                buyAt = Double.parseDouble(decimalFormat.format(usdValue + marginValue));
-                sellAt = Double.parseDouble(decimalFormat.format(usdValue - marginValue));
+                buyAt = decimalFormat.format(usdValue + marginValue);
+                sellAt = decimalFormat.format(usdValue - marginValue);
 
                 return new MarginModel(buyAt, sellAt);
             case "percentage":
-                buyAt = Double.parseDouble(decimalFormat.format(usdValue + ((usdValue / 100) * marginValue)));
-                sellAt = Double.parseDouble(decimalFormat.format(usdValue - ((usdValue / 100) * marginValue)));
+                buyAt = decimalFormat.format(usdValue + ((usdValue / 100) * marginValue));
+                sellAt = decimalFormat.format(usdValue - ((usdValue / 100) * marginValue));
 
                 return new MarginModel(buyAt, sellAt);
             default:

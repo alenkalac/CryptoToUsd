@@ -17,8 +17,8 @@ public class Litecoin extends CryptoCurrency {
     @Value("${ltc.margin.type}")
     private String marginType;
 
-    @Value("${btc.margin.value}")
-    private Integer marginValue;
+    @Value("${ltc.margin.value}")
+    private double marginValue;
 
     public String getKey() {
         return "ltc";

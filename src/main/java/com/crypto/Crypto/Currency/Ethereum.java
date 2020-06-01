@@ -17,7 +17,7 @@ public class Ethereum extends CryptoCurrency {
     private String marginType;
 
     @Value("${eth.margin.value}")
-    private Integer marginValue;
+    private double marginValue;
 
     public String getKey() {
         return "eth";

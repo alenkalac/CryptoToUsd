@@ -2,7 +2,7 @@ package com.crypto.Crypto.Currency;
 
 import com.crypto.Crypto.Enum.BinanceTickerCurrencyTypes;
 import com.crypto.Crypto.Abstract.CryptoCurrency;
-import com.crypto.Crypto.Model.BinanceJsonResponseModel;
+import com.crypto.Crypto.Model.Json.BinanceJsonResponseModel;
 import com.crypto.Crypto.Model.EndPoints;
 import com.crypto.Crypto.Services.CryptoMarginService;
 import org.springframework.beans.factory.annotation.Value;

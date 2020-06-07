@@ -1,13 +1,13 @@
 package com.crypto.Crypto.Model;
 
-public class CryptoModel {
+public class CryptoPriceModel {
     private double price;
 
     private MarginModel margin;
 
-    public CryptoModel(double price, MarginModel margin){
-        this.price = price;
-        this.margin = margin;
+    public CryptoPriceModel(double price, MarginModel margin){
+        setPrice(price);
+        setMargin(margin);
     }
 
     public double getPrice() {

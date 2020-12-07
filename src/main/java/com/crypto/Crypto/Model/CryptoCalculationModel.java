@@ -3,19 +3,23 @@ package com.crypto.Crypto.Model;
 import java.text.DecimalFormat;
 
 public class CryptoCalculationModel {
-    private double Amount;
+    private double amount;
 
     public CryptoCalculationModel(double amount, double crypto){
-        DecimalFormat decimalFormat = new DecimalFormat("#.########");
-
-        setAmount(Double.parseDouble(decimalFormat.format(amount / crypto)));
+        this.amount = (amount / crypto);
     }
 
     public double getAmount() {
-        return Amount;
+        return amount;
+    }
+
+    public String formattedAmount() {
+        DecimalFormat decimalFormat = new DecimalFormat("#.########");
+
+        return decimalFormat.format(this.amount);
     }
 
     public void setAmount(double amount) {
-        Amount = amount;
+        this.amount = amount;
     }
 }

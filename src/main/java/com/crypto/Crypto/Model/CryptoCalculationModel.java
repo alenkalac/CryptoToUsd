@@ -13,7 +13,7 @@ public class CryptoCalculationModel {
         return amount;
     }
 
-    public String formattedAmount() {
+    public String getFormatted() {
         DecimalFormat decimalFormat = new DecimalFormat("#.########");
 
         return decimalFormat.format(this.amount);

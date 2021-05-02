@@ -1,10 +1,11 @@
 package com.crypto.Crypto.Services;
 
-import com.crypto.Crypto.Model.MarginModel;
+import com.crypto.Crypto.Model.Margin;
 
 import java.text.DecimalFormat;
 
 public class CryptoMarginService {
+
     private String marginType;
     private double marginValue;
     private double usdValue;
@@ -15,7 +16,7 @@ public class CryptoMarginService {
         this.usdValue = usdValue;
     }
 
-    public MarginModel getMargin() throws Exception {
+    public Margin getMargin() throws Exception {
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
         String buyAt;
@@ -26,12 +27,12 @@ public class CryptoMarginService {
                 buyAt = decimalFormat.format(usdValue + marginValue);
                 sellAt = decimalFormat.format(usdValue - marginValue);
 
-                return new MarginModel(buyAt, sellAt);
+                return new Margin(buyAt, sellAt);
             case "percentage":
                 buyAt = decimalFormat.format(usdValue + ((usdValue / 100) * marginValue));
                 sellAt = decimalFormat.format(usdValue - ((usdValue / 100) * marginValue));
 
-                return new MarginModel(buyAt, sellAt);
+                return new Margin(buyAt, sellAt);
             default:
                 throw new Exception("Unsupported margin type");
         }

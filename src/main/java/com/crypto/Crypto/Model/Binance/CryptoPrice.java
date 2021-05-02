@@ -1,6 +1,7 @@
-package com.crypto.Crypto.Model.Json;
+package com.crypto.Crypto.Model.Binance;
 
-public class BinanceJsonResponseModel {
+public class CryptoPrice {
+
     private double price;
 
     public double getPrice() {

@@ -1,25 +1,26 @@
 package com.crypto.Crypto.Factory;
 
-import com.crypto.Crypto.Currency.Bitcoin;
-import com.crypto.Crypto.Currency.Ethereum;
-import com.crypto.Crypto.Currency.Litecoin;
-import com.crypto.Crypto.Abstract.CryptoCurrency;
+import com.crypto.Crypto.Currency.*;
+import com.crypto.Crypto.Currency.Currency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CryptoCurrencyFactory {
+public class CurrencyFactory {
 
     @Autowired
-    private Bitcoin bitcoin;
+    private BitCoin bitcoin;
 
     @Autowired
-    private Litecoin litecoin;
+    private LiteCoin litecoin;
 
     @Autowired
     private Ethereum ethereum;
 
-    public CryptoCurrency getCrypto(String currency) throws Exception {
+    @Autowired
+    private BasicAttentionToken basicAttentionToken;
+
+    public Currency getCrypto(String currency) throws Exception {
         switch (currency.toLowerCase()) {
             case "btc":
                 return bitcoin;
@@ -27,8 +28,10 @@ public class CryptoCurrencyFactory {
                 return litecoin;
             case "eth":
                 return ethereum;
+            case "bat":
+                return basicAttentionToken;
             default:
-                throw new Exception("Currency not supported.");
+                throw new Exception("Coin not supported.");
         }
     }
 }

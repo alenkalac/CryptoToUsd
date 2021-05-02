@@ -1,9 +1,7 @@
 package com.crypto.Crypto.Services;
 
-import com.crypto.Crypto.Abstract.CryptoCurrency;
-import com.crypto.Crypto.Currency.Bitcoin;
-import com.crypto.Crypto.Currency.Ethereum;
-import com.crypto.Crypto.Currency.Litecoin;
+import com.crypto.Crypto.Currency.Currency;
+import com.crypto.Crypto.Currency.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -15,14 +13,15 @@ import java.util.List;
 @Component
 public class CryptoPriceUpdater {
 
-    private List<CryptoCurrency> cryptos;
+    private List<Currency> cryptos;
 
     @Autowired
-    CryptoPriceUpdater(Bitcoin bitcoin, Litecoin litecoin, Ethereum ethereum) {
+    CryptoPriceUpdater(BitCoin bitcoin, LiteCoin litecoin, Ethereum ethereum, BasicAttentionToken basicAttentionToken) {
         this.cryptos = new LinkedList<>();
         cryptos.add(bitcoin);
         cryptos.add(litecoin);
         cryptos.add(ethereum);
+        cryptos.add(basicAttentionToken);
     }
 
     @PostConstruct

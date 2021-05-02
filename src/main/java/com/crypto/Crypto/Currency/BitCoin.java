@@ -7,16 +7,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Ethereum extends Currency {
+public class BitCoin extends Currency {
 
-    @Value("${eth.margin.type}")
+    @Value("${btc.margin.type}")
     private String marginType;
 
-    @Value("${eth.margin.value}")
+    @Value("${btc.margin.value}")
     private double marginValue;
 
     public String getSymbol() {
-        return "eth";
+        return "btc";
     }
 
     public CryptoMarginService getCryptoMarginService() {
@@ -24,7 +24,7 @@ public class Ethereum extends Currency {
     }
 
     public double getUsdValue() {
-        CryptoPrice cryptoPrice = this.getBinanceService().getCryptoPrice(BinanceTickerCurrency.ETHUSDT);
+        CryptoPrice cryptoPrice = this.getBinanceService().getCryptoPrice(BinanceTickerCurrency.BTCUSDT);
         return cryptoPrice.getPrice();
     }
 }
